@@ -27,9 +27,6 @@ Please use the following command for installation.
 conda create -n llm python==3.12
 conda activate llm
 
-# Install packages and other dependencies
-pip install -r requirements.txt
-
 # upgrade pip
 python -m pip install --upgrade pip
 
@@ -60,7 +57,12 @@ Remember to set the path of all subsequent models to the download address of you
 
 ### 2. FastAPI Deployment
 
-Change the model_name_or_path in api.py to your own path and run api.py to work out your service. The loading is successful if the following information is displayed:
+Change the model_name_or_path in api.py to your own path and run api.py to work out your service. Run the code:
+```bash
+python api.py
+```
+
+The loading is successful if the following information is displayed:
 
 ![](assets/pic1.png)
 
@@ -71,7 +73,12 @@ curl -X POST "http://127.0.0.1:6006" \
      -H 'Content-Type: application/json' \
      -d '{"prompt": "Please explain briefly how to put an elephant in the refrigerator."}'
 ```
-After this, you will get the final result. You can also make calls using the requests library in python. We also provide example1.py to do this operation. We provide partial results:
+After this, you will get the final result. You can also make calls using the requests library in python. We also provide example1.py to do this operation. Run the code:
+```bash
+python example1.py
+```
+
+We provide partial results:
 
 ![](assets/pic2.png)
 
@@ -101,7 +108,7 @@ Start by importing the LLM and SamplingParams classes from the vLLM library. The
 
 vLLM provides a very convenient encapsulation, we can directly pass in the model name or model path, do not have to manually initialize the model and the word classifier.
 
-You can use vllm_model.py to familiarize yourself with the vLLM engine. Run code
+You can use vllm_model.py to familiarize yourself with the vLLM engine. Run the code:
 ```bash
 python vllm_model.py
 ```
