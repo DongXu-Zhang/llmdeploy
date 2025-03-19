@@ -55,7 +55,7 @@ python model_download.py
 ### 2. FastAPI Deployment
 
 Change the model_name_or_path in api.py to your own path and run api.py to work out your service. The loading is successful if the following information is displayed:
-![](assets/pic1.jpg)
+![](assets/pic1.png)
 
 
 The default deployment is on port 6006, which is called through curl as follows:
